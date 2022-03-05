@@ -58,11 +58,11 @@ yargs.command({
             type: 'string'
         }
     },
-    handler: function (argv) {
-        // console.log(chalk.bold.green.inverse('Title: ' + argv.title))
-        // console.log(chalk.bold.green.inverse('Body: ' + argv.body))
+    handler(argv) {
         notes.addNote(argv.title, argv.body)
     }
+        // console.log(chalk.bold.green.inverse('Title: ' + argv.title))
+        // console.log(chalk.bold.green.inverse('Body: ' + argv.body))
 })
 
 // Create remove command 
@@ -76,17 +76,17 @@ yargs.command({
             type: 'string'
         }
     },
-    handler: function (argv){
-        // console.log(chalk.bold.red.inverse('Remove a note!'))
+    handler(argv) {
         notes.removeNote(argv.title)
     }
+        // console.log(chalk.bold.red.inverse('Remove a note!'))
 })
 
 // Create list command
 yargs.command({
     command: 'list',
     describe: 'Listing notes',
-    handler: function (){
+    handler() {
         console.log(chalk.bold.blue.inverse('Listing notes!'))
     }
 })
@@ -95,7 +95,7 @@ yargs.command({
 yargs.command({
     command: 'read',
     describe: 'Reading notes',
-    handler: function (){
+    handler() {
         console.log(chalk.bold.cyan.inverse('Reading notes!'))
     }
 })
